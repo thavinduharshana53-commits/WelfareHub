@@ -24,6 +24,10 @@ WelfareHub is an admin-based Laravel CRUD application developed to manage welfar
 
 ## Screenshots
 
+### WelfareHub | Login
+
+![Login](screenshots/welfare|login.png)
+
 ### Dashboard
 
 ![Dashboard](screenshots/dashboard.png)

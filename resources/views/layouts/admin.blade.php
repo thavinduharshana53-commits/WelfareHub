@@ -96,7 +96,7 @@
                     <a 
                         href="{{ route('feeRecords.index') }}"
                         class="flex items-center gap-3 px-4 py-3.5 rounded-xl text-white 
-                         {{ request()->routeIS('admin.feeRecords') ?
+                         {{ request()->routeIS('feeRecords.index') ?
                          'bg-emerald-500 text-white shadow-lg shadow-emerald-950/30'
                         : 'text-slate-300 hover:bg-[#114130] hover:text-[#EA580C]' }}">
 
@@ -129,7 +129,7 @@
                     <a 
                         href="{{ route('meetings.index') }}"
                         class=" flex items-center gap-3 px-4 py-3.5 rounded-xl text-white 
-                        {{ request()->routeIS('admin.meetings') ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-950/30' : 'text-slate-300 hover:bg-[#114130] hover:text-[#EA580C]'}}">
+                        {{ request()->routeIS('meetings.index') ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-950/30' : 'text-slate-300 hover:bg-[#114130] hover:text-[#EA580C]'}}">
 
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

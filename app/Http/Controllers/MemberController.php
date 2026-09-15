@@ -24,26 +24,33 @@ class MemberController extends Controller
             ->with('success', 'member saved successfully!');
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Member $member)
     {
-        $member = Member::findOrFail($id);
 
-        $data = $request->only([
-            'name',
-            'nic_number',
-            'tel_number',
-            'address',
-            'status'
+        $member->update([
+            'name'=> $request->name,
+            'nic_number'=> $request->nic,
+            'tel_number'=> $request->phone,
+            'address'=> $request->address,
+            'status'=> $request->status
         ]);
-
-        $data = array_filter($data, function ($value) {
-            return $value !== null && $value !== '';
-        });
-
-        $member->update($data);
 
         return redirect()
         ->route('admin.membersAdd')
         ->with('success', 'Member updated successfully!');
+    }
+
+    public function edit(Member $member)
+    {
+        return view('member.edit', ['member' => $member]);
+    }
+
+    public function destroy(Member $member)
+    {
+        $member->delete();
+
+        return redirect()
+        ->route('admin.membersAdd')
+        ->with('success', 'Member Deleted successfully!');
     }
 }

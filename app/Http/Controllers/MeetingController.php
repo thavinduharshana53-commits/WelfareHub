@@ -65,7 +65,7 @@ class MeetingController extends Controller
      */
     public function edit(Meeting $meeting)
     {
-        //
+        return view('mettings.edit', ['meeting' => $meeting]);
     }
 
     /**
@@ -73,7 +73,17 @@ class MeetingController extends Controller
      */
     public function update(Request $request, Meeting $meeting)
     {
-        //
+        $meeting->update([
+            'title'=> $request->title,
+            'date'=> $request->date,
+            'time'=> $request->time,
+            'venue'=> $request->venue,
+            'text'=> $request->text
+        ]);
+
+        return redirect()
+            ->route('meetings.index')
+            ->with('success', 'Announcement Edited successfully.');
     }
 
     /**
@@ -81,7 +91,11 @@ class MeetingController extends Controller
      */
     public function destroy(Meeting $meeting)
     {
-        //
+        $meeting->delete();
+
+        return redirect()
+            ->route('meetings.index')
+            ->with('success', 'Announcement Deleted Successfully.');
     }
 
    public function sms(Meeting $meeting)

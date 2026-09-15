@@ -31,18 +31,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified',]
     Route::post('feeRecords/store', [FeeController::class, 'store'] )
         ->name('feeRecords.store');
 
-    Route::post('meetings/store', [MeetingController::class, 'store'] )
-        ->name('meetings.store');
-
-
-    Route::patch('/admin/members/{id}', [MemberController::class, 'update'] )
-        ->name('admin.members.update');
-
     Route::post('/meetings/{meeting}/sms',[MeetingController::class, 'sms'])
         ->name('meetings.sms');
 
     Route::resource('feeRecords', FeeController::class);
 
     Route::resource('meetings', MeetingController::class);
+
+    Route::resource('member', MemberController::class);
     
 });

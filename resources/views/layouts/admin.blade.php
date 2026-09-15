@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 </head>
-<body  class="m-0 overflow-y-auto bg-[#fcf8f9] text-slate-900">
+<body  class="m-0 overflow-y-auto bg-[#E8EDF1] text-slate-900">
     <div>
         <aside class="fixed inset-y-0 left-0 z-50 flex w-[260px] flex-col
                bg-[#0C2F23] text-white shadow-2xl
@@ -185,7 +185,7 @@
         </aside>
         
         {{-- Page Content --}}
-        <main class="ml-[300px] min-h-screen bg-[#F8FAFC] p-4 sm:p-6 lg:p-8">
+        <main class="ml-[300px] min-h-screen p-4 sm:p-6 lg:p-8">
             @yield('content')
         </main>
 
